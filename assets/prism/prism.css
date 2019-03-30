@@ -1,161 +1,166 @@
-/**
- * GHColors theme by Avi Aryan (http://aviaryan.in)
- * Inspired by Github syntax coloring
- */
+@import url(https://fonts.googleapis.com/css?family=Fira+Mono);
+/*
+ * Hopscotch
+ * by Jan T. Sott
+ * https://github.com/idleberg/Hopscotch
+ *
+ * This work is licensed under the Creative Commons CC0 1.0 Universal License
+ */ 
+ 
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ffffff;
+  font-family: "Fira Mono", Menlo, Monaco, "Lucida Console","Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  word-spacing: normal;
 
- code[class*="language-"],
- pre[class*="language-"] {
-	 color: #393A34;
-	 font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
-	 direction: ltr;
-	 text-align: left;
-	 white-space: pre;
-	 word-spacing: normal;
-	 word-break: normal;
-	 font-size: 13px;
-	 line-height: 1.2em;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 
-	 -moz-tab-size: 4;
-	 -o-tab-size: 4;
-	 tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; 
+  white-space: pre; 
+  white-space: pre-wrap; 
+  word-break: break-all;
+  word-wrap: break-word; 
+  background: #322931; 
+  color: #b9b5b8;
+}
 
-	 -webkit-hyphens: none;
-	 -moz-hyphens: none;
-	 -ms-hyphens: none;
-	 hyphens: none;
- }
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  overflow: auto; 
+}
 
- pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
- code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-	 background: #b3d4fc;
- }
+/* Inline code */
+:not(pre) > code {
+    padding: 0.3em 0.5em;
+    border-radius: .3em;
+    background: #322931;
+    color: #b9b5b8;
+}
 
- pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
- code[class*="language-"]::selection, code[class*="language-"] ::selection {
-	 background: #b3d4fc;
- }
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #797379;
+}
 
- /* Code blocks */
- pre[class*="language-"] {
-	 padding: 1em;
-	 margin: .5em 0;
-	 overflow: auto;
-	 border: 1px solid #dddddd;
-	 background-color: white;
- }
+.token.punctuation {
+  color: #b9b5b8;
+}
 
- :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
- }
+.namespace {
+  opacity: .7;
+}
 
- /* Inline code */
- :not(pre) > code[class*="language-"] {
-	 padding: .2em;
-	 padding-top: 1px; padding-bottom: 1px;
-	 background: #f8f8f8;
-	 border: 1px solid #dddddd;
- }
+.token.null,
+.token.operator,
+.token.boolean,
+.token.number {
+  color: #fd8b19;
+} 
+.token.property { 
+  color: #fdcc59;
+}
+.token.tag { 
+  color: #1290bf;
+} 
+.token.string {
+  color: #149b93;
+} 
+.token.selector { 
+  color: #c85e7c;
+}
+.token.attr-name { 
+  color: #fd8b19;
+} 
+.token.entity,
+.token.url, 
+.language-css .token.string,
+.style .token.string {
+  color: #149b93;
+}
 
- .token.comment,
- .token.prolog,
- .token.doctype,
- .token.cdata {
-	 color: #999988; font-style: italic;
- }
+.token.attr-value,
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+  color: #8fc13e;
+} 
 
- .token.namespace {
-	 opacity: .7;
- }
+.token.statement,
+.token.regex, 
+.token.atrule { 
+  color: #149b93;
+}
 
- .token.string,
- .token.attr-value {
-	 color: #e3116c;
- }
- .token.punctuation,
- .token.operator {
-	 color: #393A34; /* no highlight */
- }
+.token.placeholder,
+.token.variable {
+  color: #1290bf;
+} 
 
- .token.entity,
- .token.url,
- .token.symbol,
- .token.number,
- .token.boolean,
- .token.variable,
- .token.constant,
- .token.property,
- .token.regex,
- .token.inserted {
-	 color: #36acaa;
- }
+.token.important {
+  color: #dd464c;
+  font-weight: bold;
+} 
 
- .token.atrule,
- .token.keyword,
- .token.attr-name,
- .language-autohotkey .token.selector {
-	 color: #00a4db;
- }
+.token.entity {
+  cursor: help;
+} 
 
- .token.function,
- .token.deleted,
- .language-autohotkey .token.tag {
-	 color: #9a050f;
- }
+pre > code.highlight {
+  outline: .4em solid red;
+  outline-offset: .4em;
+} 
 
- .token.tag,
- .token.selector,
- .language-autohotkey .token.keyword {
-	 color: #00009f;
- }
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
 
- .token.important,
- .token.function,
- .token.bold {
-	 font-weight: bold;
- }
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
 
- .token.italic {
-	 font-style: italic;
- }
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
 
- pre[class*="language-"].line-numbers {
- 	position: relative;
- 	padding-left: 3.8em;
- 	counter-reset: linenumber;
- }
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
- pre[class*="language-"].line-numbers > code {
- 	position: relative;
- 	white-space: inherit;
- }
+}
 
- .line-numbers .line-numbers-rows {
- 	position: absolute;
- 	pointer-events: none;
- 	top: 0;
- 	font-size: 100%;
- 	left: -3.8em;
- 	width: 3em; /* works for line-numbers below 1000 lines */
- 	letter-spacing: -1px;
- 	border-right: 1px solid #999;
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
 
- 	-webkit-user-select: none;
- 	-moz-user-select: none;
- 	-ms-user-select: none;
- 	user-select: none;
-
- }
-
- .line-numbers-rows > span {
- 	pointer-events: none;
- 	display: block;
- 	counter-increment: linenumber;
- }
-
- .line-numbers-rows > span:before {
- 	content: counter(linenumber);
- 	color: #999;
- 	display: block;
- 	padding-right: 0.8em;
- 	text-align: right;
- }
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
